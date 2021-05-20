@@ -2,7 +2,9 @@ package org.dreamexposure.discal.client.message;
 
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
-
+import discord4j.core.object.entity.Guild;
+import discord4j.core.spec.EmbedCreateSpec;
+import discord4j.rest.util.Image;
 import org.dreamexposure.discal.client.DisCalClient;
 import org.dreamexposure.discal.core.database.DatabaseManager;
 import org.dreamexposure.discal.core.enums.event.EventColor;
@@ -13,20 +15,15 @@ import org.dreamexposure.discal.core.object.event.PreEvent;
 import org.dreamexposure.discal.core.utils.GlobalConst;
 import org.dreamexposure.discal.core.utils.ImageUtils;
 import org.dreamexposure.discal.core.wrapper.google.CalendarWrapper;
+import reactor.core.publisher.Mono;
+import reactor.function.TupleUtils;
 
+import javax.annotation.Nullable;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.function.Consumer;
-
-import javax.annotation.Nullable;
-
-import discord4j.core.object.entity.Guild;
-import discord4j.core.spec.EmbedCreateSpec;
-import discord4j.rest.util.Image;
-import reactor.core.publisher.Mono;
-import reactor.function.TupleUtils;
 
 /**
  * Created by Nova Fox on 1/3/2017.

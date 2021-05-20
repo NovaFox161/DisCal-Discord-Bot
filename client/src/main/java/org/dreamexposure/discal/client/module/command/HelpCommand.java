@@ -1,16 +1,15 @@
 package org.dreamexposure.discal.client.module.command;
 
+import discord4j.core.event.domain.message.MessageCreateEvent;
+import discord4j.core.spec.EmbedCreateSpec;
 import org.dreamexposure.discal.client.message.Messages;
 import org.dreamexposure.discal.core.object.GuildSettings;
 import org.dreamexposure.discal.core.object.command.CommandInfo;
 import org.dreamexposure.discal.core.utils.GlobalConst;
+import reactor.core.publisher.Mono;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;
-
-import discord4j.core.event.domain.message.MessageCreateEvent;
-import discord4j.core.spec.EmbedCreateSpec;
-import reactor.core.publisher.Mono;
 
 /**
  * Created by Nova Fox on 1/3/2017.
@@ -99,7 +98,7 @@ public class HelpCommand implements Command {
     private Consumer<EmbedCreateSpec> getCommandInfoEmbed(final Command cmd) {
         return spec -> {
             spec.setAuthor("DisCal", GlobalConst.discalSite, GlobalConst.iconUrl);
-            spec.addField("Command", cmd.getCommand(), true);
+            spec.setTitle(cmd.getCommand());
             spec.addField("Description", cmd.getCommandInfo().getDescription(), true);
             spec.addField("Example", cmd.getCommandInfo().getExample(), true);
 
@@ -122,8 +121,11 @@ public class HelpCommand implements Command {
     private Consumer<EmbedCreateSpec> getSubCommandEmbed(final Command cmd, final String subCommand) {
         return spec -> {
             spec.setAuthor("DisCal", GlobalConst.discalSite, GlobalConst.iconUrl);
-            spec.addField("Command", cmd.getCommand(), true);
-            spec.addField("Sub Command", subCommand, true);
+
+            spec.setTitle(cmd.getCommand() + " " + subCommand);
+
+            //TODO: support subcommand examples
+            //TODO: support subcommand format
 
             spec.addField("Usage", cmd.getCommandInfo().getSubCommands().get(subCommand), false);
 

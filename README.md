@@ -21,7 +21,7 @@ DisCal is a discord bot that connects Discord and Google Calendar as seamlessly 
 Patrons and supporters on the $5/month plans get access to work in progress and exclusive features.
 
 * External Calendars
-    - Use an already existing calendar that is on your google account with DisCal
+    - Use an already existing calendar that is on your Google account with DisCal
 * Web Dashboard (WIP)
     - Use the web dashboard to manage the bot, calendar, and more without the need for commands.
     - Still very early in development
@@ -81,27 +81,11 @@ DisCal is an open source project and is maintained in our free time. We always w
 4. Commit your changes and push to your fork `git push origin master`
 5. Create a new pull request and submit it back to us!
 
+> This section will be getting a facelift
+
 ## Translations
 
-As a calendar bot, DisCal reaches global use, and because of this , Discal allows users to select the language they wish to use.
+As a calendar bot, DisCal reaches global use, and because of this , Discal allows users to select the language they wish
+to use.
 
-If you are able to speak two languages (English and another language) we welcome you to translate the bot to that language!
-
-For instructions on how to translate DisCal, continue reading below.
-
-Do note however, that we are planning on making the translation system much more powerful and easier to maintain and contribute to in the future.
-
-### Translation Instructions
-
-Follow the format provided in the [TEMPLATE LANGUAGE JSON File.](client/src/main/resources/languages/TEMPLATE.json) and submit a new translation by making adding a new JSON file with the naming scheme `LANG_NAME.json` (Where "LANG_NAME" is the name of the language you translated it to).
-
-### Translation Guidelines
-
-We very much appreciate all of the translations we can get, but please follow the guidelines below so that we may ensure that we have high quality translations.
-
-1. Please be fluent in the language you are translating to. We will ***NOT*** accept any translations that are made through Google Translate as it cannot tell statement context and we want to maintain high standards for the bot.
-2. The general JSON format is `"key": "value"`, which means that the "key" must remain the same in all files, so ***DO NOT*** change the key, only the values.
-3. In many files `%value%` or something similar is seen. These are replacement variables and will never be seen by the user. ***DO NOT CHANGE THE REPLACERS!*** 
-4. At the beginning of the file, you will see `"Language: "LANG_NAME_HERE"` Please change `LANG_NAME_HERE` to the language you are translating the file to!
-5. Please run your translated language file through this [Online JSON Parser](http://jsonparseronline.com) If you cannot do that, the development team will.
-6. Contact the development team in our Discord guild for any additional help or info.
+> This section is a work in progress as it needs to be rewritten for our new translation system
